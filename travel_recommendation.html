@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TravelBloom</title>
+    <link rel="stylesheet" href="travel_recommendation.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+        <h2>TravelBloom</h2>
+
+        <ul>
+            <li><a href="travel_recommendation.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <input id="searchInput" type="text" placeholder="Enter a destination or keyword">
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="resetBtn" class="reset-btn">Reset</button>
+        </div>
+          
+    </nav>
+
+    <!-- ===== HOME / HERO SECTION ===== -->
+    <section
+        class="hero"
+        style="background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1600&q=80');"
+    >
+        <div class="hero-content">
+
+            <!-- Social links (optional) -->
+            <div class="social">
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+
+            <h1>
+                EXPLORE<br>
+                DREAM<br>
+                DESTINATION
+            </h1>
+
+            <p>
+                Welcome to TravelBloom — your travel recommendation hub.
+                Discover breathtaking destinations, explore new cultures,
+                and plan unforgettable journeys with ease.
+            </p>
+
+            <a href="#" class="cta">BOOK NOW</a>
+        </div>
+    </section>
+
+    <section class="page">
+        <h1>Recommendations</h1>
+        <p id="statusText">Type a keyword and click Search.</p>
+      
+        <div id="results" class="results-grid"></div>
+    </section>
+
+    <script src="travel_recommendation.js"></script>
+
+      
+
+</body>
+</html>
