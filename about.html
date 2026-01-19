@@ -10,27 +10,86 @@
     <nav>
         <h2>TravelBloom</h2>
         <ul>
-            <li><a href="travel_recommendation.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
+        <div class="nav-actions">
+            <input id="searchInput" type="text" placeholder="Enter a destination or keyword">
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="resetBtn" class="reset-btn">Clear</button>
+        </div>
     </nav>
 
     <!-- About Us Content -->
-    <section>
+    <section class="page">
         <h1>About TravelBloom</h1>
         <p>
-            TravelBloom is a travel recommendation platform designed to help users
-            discover amazing destinations around the world. Our goal is to make
-            travel planning simple, inspiring, and personalized.
+            TravelBloom is a simple travel recommendation site built to help people get from “I want to go somewhere”
+            to “here are a few places I’d actually enjoy.” We focus on quick suggestions with a short description and an image,
+            so you can decide fast and keep planning.
+        </p>
+        <p>
+            This project is a demo for learning front-end web development. The destinations shown are examples, and the
+            “contact” form is for practice (it doesn’t send real messages).
         </p>
 
-        <p>
-            Whether you are looking for beaches, cities, nature, or cultural
-            experiences, TravelBloom provides curated suggestions to match your
-            interests.
-        </p>
+        <h2 style="margin-top:18px; margin-bottom:10px;">Meet the Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>Amara Chen</h3>
+                <p class="muted">Product & Content</p>
+                <p>Collects destination ideas and writes the short, useful summaries you see on the cards.</p>
+            </div>
+            <div class="team-card">
+                <h3>Diego Morales</h3>
+                <p class="muted">Front-End Developer</p>
+                <p>Builds the layout, navigation, and search interactions so everything feels smooth and responsive.</p>
+            </div>
+            <div class="team-card">
+                <h3>Samira Patel</h3>
+                <p class="muted">QA & Accessibility</p>
+                <p>Checks for broken links, readable contrast, and clear form labels—small details that matter.</p>
+            </div>
+        </div>
     </section>
+
+    <script>
+      // Redirect search to home page
+      document.addEventListener("DOMContentLoaded", () => {
+        const searchBtn = document.getElementById("searchBtn");
+        const searchInput = document.getElementById("searchInput");
+        const resetBtn = document.getElementById("resetBtn");
+
+        if (searchBtn && searchInput) {
+          searchBtn.addEventListener("click", () => {
+            const query = searchInput.value.trim();
+            if (query) {
+              window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+            } else {
+              window.location.href = "index.html";
+            }
+          });
+
+          searchInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+              const query = searchInput.value.trim();
+              if (query) {
+                window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+              } else {
+                window.location.href = "index.html";
+              }
+            }
+          });
+        }
+
+        if (resetBtn) {
+          resetBtn.addEventListener("click", () => {
+            searchInput.value = "";
+          });
+        }
+      });
+    </script>
 
 </body>
 </html>
